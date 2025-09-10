@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DARC Carousel Presentation</title>
+    <link rel="stylesheet" href="carousel.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="carousel-container">
+        <!-- Navigation -->
+        <div class="carousel-nav">
+            <button class="nav-btn prev-btn" onclick="prevSlide()">
+                <span class="material-icons">chevron_left</span>
+            </button>
+            <div class="slide-indicators">
+                <span class="indicator active" onclick="goToSlide(0)"></span>
+                <span class="indicator" onclick="goToSlide(1)"></span>
+                <span class="indicator" onclick="goToSlide(2)"></span>
+                <span class="indicator" onclick="goToSlide(3)"></span>
+                <span class="indicator" onclick="goToSlide(4)"></span>
+                <span class="indicator" onclick="goToSlide(5)"></span>
+                <span class="indicator" onclick="goToSlide(6)"></span>
+                <span class="indicator" onclick="goToSlide(7)"></span>
+                <span class="indicator" onclick="goToSlide(8)"></span>
+                <span class="indicator" onclick="goToSlide(9)"></span>
+            </div>
+            <button class="nav-btn next-btn" onclick="nextSlide()">
+                <span class="material-icons">chevron_right</span>
+            </button>
+        </div>
+
+        <!-- Slides -->
+        <div class="carousel-wrapper">
+            <!-- Slide 0: Title -->
+            <div class="slide active" data-bg="linear-gradient(135deg, #6750A4, #625B71)">
+                <div class="slide-content title-slide">
+                    <div class="title-content">
+                        <h1>DARC Six-Month Report</h1>
+                        <p>Drone Application & Research Center</p>
+                        <span class="period">February - August 2025</span>
+                        <div class="logo-container">
+                            <img src="images/logo_DARC.png" alt="DARC Logo" class="title-logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 1: Mapping -->
+            <div class="slide" data-bg="linear-gradient(135deg, #1976D2, #42A5F5)">
+                <div class="slide-content split-layout">
+                    <div class="content-section">
+                        <div class="content-box">
+                            <div class="slide-number">01</div>
+                            <h2><span class="material-icons">satellite_alt</span>Drone-Based Mapping & Surveys</h2>
+                            <ul>
+                                <li>Mapped 27 slum areas of Dehradun</li>
+                                <li>Change detection analysis (2022-2025)</li>
+                                <li>Processed imagery using Pix4D & Agisoft</li>
+                                <li>Digitization of slum boundaries</li>
+                                <li>Streetlight monitoring feasibility</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="image-section">
+                        <div class="image-grid-mapping">
+                            <div class="mapping-image main">
+                                <img src="images/slum1.png" alt="Mapping Project">
+                            </div>
+                            <div class="mapping-image">
+                                <img src="images/slum2.png" alt="Mapping Project">
+                            </div>
+                            <div class="mapping-image">
+                                <img src="images/slum3.png" alt="Mapping Project">
+                            </div>
+                            <div class="mapping-image">
+                                <img src="images/slum4.png" alt="Mapping Project">
+                            </div>
+                            <div class="mapping-image">
+                                <img src="images/slum5.png" alt="Mapping Project">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Training -->
+            <div class="slide" data-bg="linear-gradient(135deg, #388E3C, #66BB6A)">
+                <div class="slide-content split-layout reverse">
+                    <div class="image-section">
+                        <div class="training-collage">
+                            <div class="collage-item large">
+                                <img src="images/training1.jpeg" alt="Mapping Project">
+                            </div>
+                            <div class="collage-item">
+                                <img src="images/training2.jpeg" alt="Mapping Project">
+                            </div>
+                            <div class="collage-item">
+                                <img src="images/training3.jpeg" alt="Mapping Project">
+                            </div>
+                            <div class="collage-item">
+                                <img src="images/training4.jpeg" alt="Mapping Project">
+                            </div>
+                            <div class="collage-item">
+                                <img src="images/training5.jpeg" alt="Mapping Project">
+                            </div>
+                            <div class="collage-item">
+                                <img src="images/training6.jpeg" alt="Mapping Project">
+                            </div>
+                            <div class="collage-item">
+                                <img src="images/training7.jpeg" alt="Mapping Project">
+                            </div>
+                            <div class="collage-item large">
+                                <img src="images/training8.jpeg" alt="Mapping Project">
+                            </div>
+                            <div class="collage-item">
+                                <img src="images/training9.jpeg" alt="Mapping Project">
+                            </div>
+                            <div class="collage-item">
+                                <img src="images/training10.jpeg" alt="Mapping Project">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-section">
+                        <div class="content-box">
+                            <div class="slide-number">02</div>
+                            <h2><span class="material-icons">school</span>Training & Capacity Building</h2>
+                            <ul>
+                                <li>NDRF Trainings (Feb 2025)</li>
+                                <li>ITBP Multiple batches (Mar-Jul)</li>
+                                <li>BSF Operations training (Apr)</li>
+                                <li>Guest lectures & PhD support</li>
+                                <li>200+ officials trained</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: RPTO -->
+            <div class="slide" data-bg="linear-gradient(135deg, #F57C00, #FFB74D)">
+                <div class="slide-content split-layout">
+                    <div class="content-section">
+                        <div class="content-box">
+                            <div class="slide-number">03</div>
+                            <h2><span class="material-icons">verified</span>RPTO Progress</h2>
+                            <div class="progress-list">
+                                <div class="progress-item completed">
+                                    <span class="material-icons">check_circle</span>
+                                    <div class="progress-text">
+                                        <h3>Documentation Submitted</h3>
+                                        <p>Complete RPTO application with all required documents</p>
+                                    </div>
+                                </div>
+                                <div class="progress-item completed">
+                                    <span class="material-icons">check_circle</span>
+                                    <div class="progress-text">
+                                        <h3>DGCA Inspection Completed</h3>
+                                        <p>Successfully passed April 2025 inspection</p>
+                                    </div>
+                                </div>
+                                <div class="progress-item completed">
+                                    <span class="material-icons">check_circle</span>
+                                    <div class="progress-text">
+                                        <h3>Infrastructure Setup</h3>
+                                        <p>Classrooms, labs, simulators, drone bays ready</p>
+                                    </div>
+                                </div>
+                                <div class="progress-item in-progress">
+                                    <span class="material-icons">schedule</span>
+                                    <div class="progress-text">
+                                        <h3>Training Materials</h3>
+                                        <p>UAS handbook, SOPs, certification process</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-section">
+                        <div class="rpto-images">
+                            <div class="rpto-image">
+                                <div class="collage-item">
+                                    <img src="images/rpto4.jpeg" alt="Mapping Project">
+                                </div>
+                            </div>
+                            <div class="rpto-image">
+                                <div class="collage-item">
+                                    <img src="images/rpto2.jpeg" alt="Mapping Project">
+                                </div>
+                            </div>
+                            <div class="rpto-image">
+                                <div class="collage-item">
+                                    <img src="images/rpto1.jpeg" alt="Mapping Project">
+                                </div>
+                            </div>
+                            <div class="rpto-image">
+                                <div class="collage-item">
+                                    <img src="images/rpto3.jpeg" alt="Mapping Project">
+                                </div>
+                            </div>
+                            <div class="rpto-image">
+                                <div class="collage-item">
+                                    <img src="images/rpto5.jpeg" alt="Mapping Project">
+                                </div>
+                            </div>
+                            <div class="rpto-image">
+                                <div class="collage-item">
+                                    <img src="images/rpto6.jpeg" alt="Mapping Project">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Outreach -->
+            <div class="slide" data-bg="linear-gradient(135deg, #7B1FA2, #BA68C8)">
+                <div class="slide-content split-layout">
+                    <div class="content-section">
+                        <div class="content-box">
+                            <div class="slide-number">04</div>
+                            <h2><span class="material-icons">campaign</span>Outreach & Exhibitions</h2>
+                            <ul>
+                                <li>Science Festival Exhibition</li>
+                                <li>BSF Commandant's visit showcase</li>
+                                <li>Uttarakhand Space Meet 2025</li>
+                                <li>Viksit Bharat 2047 Workshop</li>
+                                <li>University lectures</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="image-section">
+                        <div class="exhibition-collage">
+                            <div class="exhibition-item large">
+                                <div class="collage-item">
+                                    <img src="images/spacemeet1.png" alt="Mapping Project">
+                                </div>
+                            </div>
+                            <div class="exhibition-item">
+                                <img src="images/bsf1.jpeg" alt="Mapping Project">
+                            </div>
+                            <div class="exhibition-item">
+                                <img src="images/exhibition1.jpeg" alt="Mapping Project">
+                            </div>
+                            <div class="exhibition-item large">
+                                <div class="collage-item">
+                                    <img src="images/media1.jpeg" alt="Mapping Project">
+                                </div>
+                            </div>
+                            <div class="exhibition-item">
+                                <img src="images/utu1.jpeg" alt="Mapping Project">
+                            </div>
+                            <div class="exhibition-item">
+                                <div class="collage-item">
+                                    <img src="images/media2.jpeg" alt="Mapping Project">
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Publications -->
+            <div class="slide" data-bg="linear-gradient(135deg, #D32F2F, #F44336)">
+                <div class="slide-content split-layout reverse">
+                    <div class="image-section">
+                        <div class="publications-showcase">
+                            <div class="book-image">
+                                <div class="image-placeholder">
+                                    <img src="images/DroneBook.jpeg" alt="Mapping Project">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-section">
+                        <div class="content-box">
+                            <div class="slide-number">05</div>
+                            <h2><span class="material-icons">description</span>Presentations & Publications</h2>
+                            <ul>
+                                <li>DARC Achievements Presentation (May 2025)</li>
+                                <li>Digital Drone Booklet for departments</li>
+                                <li>Slum Change Detection Presentation</li>
+                                <li>Technical reports & handbooks</li>
+                                <li>SOPs & drone specifications</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>ations</h2>
+            <ul>
+                <li>DARC Achievements Presentation</li>
+                <li>Digital Drone Booklet</li>
+                <li>Slum Change Detection Report</li>
+                <li>Technical handbooks & SOPs</li>
+                <li>Drone specifications</li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Slide 6: Research -->
+    <div class="slide" data-bg="linear-gradient(135deg, #00796B, #4DB6AC)">
+        <div class="slide-content split-layout">
+            <div class="content-section">
+                <div class="content-box">
+                    <div class="slide-number">06</div>
+                    <h2><span class="material-icons">psychology</span>Research & Development</h2>
+                    <ul>
+                        <li>AI model optimization for edge devices</li>
+                        <li>Explored AI-driven flood forecasting models</li>
+                        <li>Developed web platform for drone photogrammetry</li>
+                        <li>Flask + Geoserver + Firebase integration</li>
+                        <li>Added dashboards, analytics & export tools</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="image-section">
+                <div class="image-stack">
+                    <img src="images/divyadrishti1.png" alt="Drone Map 1">
+                    <img src="images/divyadrishti2.png" alt="Drone Map 2">
+                </div>
+            </div>
+            <!-- <div class="image-section">
+                        <div class="rpto-images">
+                            <div class="rpto-image">
+                                <div class="collage-item">
+                                    <img src="images/divyadrishti1.png" alt="Mapping Project">
+                                </div>
+                            </div>
+                            <div class="rpto-image">
+                                <div class="collage-item">
+                                    <img src="images/divyadrishti2.png" alt="Mapping Project">
+                                </div>
+                            </div>
+                            <!-- <div class="rpto-image">
+                                <div class="collage-item">
+                                    <img src="images/divyadrishti3.png" alt="Mapping Project">
+                                </div>
+                            </div> -->
+
+        </div>
+    </div> -->
+    </div>
+    </div>
+
+    <!-- Slide 7: Photography -->
+    <div class="slide" data-bg="linear-gradient(135deg, #5D4037, #8D6E63)">
+        <div class="slide-content split-layout">
+            <div class="content-section">
+                <div class="content-box">
+                    <div class="slide-number">07</div>
+                    <h2><span class="material-icons">camera_alt</span>Photography & Videography Projects</h2>
+                    <div class="project-details">
+                        <div class="project-item">
+                            <h3><span class="material-icons">nightlight</span>Night Drone Photography</h3>
+                            <p>Urban monitoring using advanced night flight capabilities for streetlight assessment and
+                                city surveillance</p>
+                        </div>
+                        <div class="project-item">
+                            <h3><span class="material-icons">water_drop</span>Maa Dhara Naman Project</h3>
+                            <p>Professional photography & videography for UCOST water conservation initiative
+                                documentation</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="image-section">
+                <div class="rpto-images">
+                    <div class="rpto-image">
+                        <div class="collage-item">
+                            <img src="images/street1.jpeg" alt="Mapping Project">
+                        </div>
+                    </div>
+                    <div class="rpto-image">
+                        <div class="collage-item">
+                            <img src="images/street2.jpeg" alt="Mapping Project">
+                        </div>
+                    </div>
+                    <div class="rpto-image">
+                        <div class="collage-item">
+                            <img src="images/street3.jpeg" alt="Mapping Project">
+                        </div>
+                    </div>
+                    <div class="rpto-image">
+                        <div class="collage-item">
+                            <img src="images/tons1.png" alt="Mapping Project">
+                        </div>
+                    </div>
+                    <div class="rpto-image">
+                        <div class="collage-item">
+                            <img src="images/tons2.png" alt="Mapping Project">
+                        </div>
+                    </div>
+                    <div class="rpto-image">
+                        <div class="collage-item">
+                            <img src="images/tons3.png" alt="Mapping Project">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Mentoring -->
+    <div class="slide" data-bg="linear-gradient(135deg, #303F9F, #5C6BC0)">
+        <div class="slide-content center-layout">
+            <div class="content-box centered">
+                <div class="slide-number">08</div>
+                <h2><span class="material-icons">groups</span>Internships & Mentoring</h2>
+                <div class="mentoring-details">
+                    <div class="mentoring-section">
+                        <div class="mentoring-item">
+                            <span class="material-icons">school</span>
+                            <div class="mentoring-text">
+                                <h3>College Intern Mentoring</h3>
+                                <p>Guided students through hands-on drone technology learning, providing practical
+                                    experience in assembly, calibration, and field operations</p>
+                            </div>
+                        </div>
+                        <div class="mentoring-item">
+                            <span class="material-icons">precision_manufacturing</span>
+                            <div class="mentoring-text">
+                                <h3>Drone Assembly & Calibration</h3>
+                                <p>Comprehensive training on drone hardware assembly, sensor calibration, and system
+                                    integration for optimal performance</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mentoring-section">
+                        <div class="mentoring-item">
+                            <span class="material-icons">psychology</span>
+                            <div class="mentoring-text">
+                                <h3>PhD Intern Project Support</h3>
+                                <p>Provided research guidance and technical support for PhD-level projects under USAC
+                                    supervision and collaboration</p>
+                            </div>
+                        </div>
+                        <div class="mentoring-item">
+                            <span class="material-icons">trending_up</span>
+                            <div class="mentoring-text">
+                                <h3>Skill Development Initiatives</h3>
+                                <p>Structured programs to enhance technical capabilities and research methodologies in
+                                    drone applications</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Administration -->
+    <div class="slide" data-bg="linear-gradient(135deg, #455A64, #78909C)">
+        <div class="slide-content center-layout">
+            <div class="content-box centered">
+                <div class="slide-number">09</div>
+                <h2><span class="material-icons">admin_panel_settings</span>Administrative & Coordination</h2>
+                <div class="admin-details">
+                    <div class="admin-section">
+                        <div class="admin-item">
+                            <span class="material-icons">business</span>
+                            <div class="admin-text">
+                                <h3>Drone Company Coordination</h3>
+                                <p>Coordinated with empanelled drone companies for proposals, past work data
+                                    compilation, and strategic partnerships for enhanced service delivery</p>
+                            </div>
+                        </div>
+                        <div class="admin-item">
+                            <span class="material-icons">inventory</span>
+                            <div class="admin-text">
+                                <h3>Inventory & Asset Management</h3>
+                                <p>Prepared comprehensive inventory reports and asset allocation documentation for DARC
+                                    Lab equipment and resources</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="admin-section">
+                        <div class="admin-item">
+                            <span class="material-icons">public</span>
+                            <div class="admin-text">
+                                <h3>State Resource Compilation</h3>
+                                <p>Facilitated department-wise compilation of drone resources across the state, creating
+                                    a comprehensive database for strategic planning</p>
+                            </div>
+                        </div>
+                        <div class="admin-item">
+                            <span class="material-icons">hub</span>
+                            <div class="admin-text">
+                                <h3>Inter-Department Coordination</h3>
+                                <p>Established coordination mechanisms between various government departments for
+                                    seamless drone technology integration and deployment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="carousel.js"></script>
+</body>
+
+</html>

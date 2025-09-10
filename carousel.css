@@ -1,0 +1,777 @@
+/* Material 3 Variables */
+:root {
+    --md-sys-color-primary: #6750A4;
+    --md-sys-color-on-primary: #FFFFFF;
+    --md-sys-color-surface: #FFFBFE;
+    --md-sys-color-on-surface: #1C1B1F;
+    --md-sys-shape-corner-large: 16px;
+    --md-sys-shape-corner-medium: 12px;
+    --md-sys-elevation-2: 0px 3px 6px rgba(0,0,0,0.16), 0px 3px 6px rgba(0,0,0,0.23);
+    --md-sys-elevation-4: 0px 14px 28px rgba(0,0,0,0.25), 0px 10px 10px rgba(0,0,0,0.22);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    background: #000;
+}
+
+.carousel-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, #6750A4, #625B71);
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide.prev {
+    transform: translateX(-100%);
+}
+
+.slide-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    position: relative;
+}
+
+/* Title Slide */
+.title-slide {
+    text-align: center;
+    color: white;
+}
+
+.title-content h1 {
+    font-size: 8rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.title-content p {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.period {
+    font-size: 2.5rem;
+    opacity: 0.8;
+    display: block;
+    margin-bottom: 60px;
+    font-weight: 400;
+}
+
+.logo-container {
+    margin-top: 40px;
+}
+
+.title-logo {
+    max-width: 500px;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+}
+
+/* Split Layout */
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.split-layout.reverse {
+    grid-template-columns: 1fr 1fr;
+}
+
+.content-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    height: 100vh;
+    width: 50vw;
+}
+
+.content-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    position: relative;
+}
+
+.content-box.centered {
+    text-align: center;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-number {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    font-weight: 700;
+    backdrop-filter: blur(10px);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.content-box h2 {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    margin-top: 80px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.content-box h2 .material-icons {
+    font-size: 5rem;
+    color: #FFD700;
+}
+
+.content-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content-box li {
+    padding: 20px 0;
+    color: white;
+    font-size: 2.2rem;
+    line-height: 1.4;
+    position: relative;
+    padding-left: 60px;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.content-box li::before {
+    content: '▶';
+    color: #FFD700;
+    position: absolute;
+    left: 0;
+    font-size: 1.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Image Sections */
+.image-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;          /* full viewport height */
+  overflow: hidden;       /* no gaps */
+  background: none;       /* remove background color */
+  padding: 10% 0;
+  margin: 0;
+  display: flex;
+  align-items: center;   /* vertical centering */
+  justify-content: center; 
+}
+
+.image-placeholder {
+  height: 100%;
+  width: 100%;
+}
+
+.image-placeholder img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;       /* fill both top & bottom */
+  display: block;
+}
+
+.image-shape {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-shape img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.image-placeholder .material-icons {
+    font-size: 8rem;
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+.image-placeholder p {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Shape Variations */
+.hexagon {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.triangle {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.diamond {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.octagon {
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+.star {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+/* Center Layout */
+.center-layout {
+    flex-direction: column;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 60px;
+    width: 100vw;
+    height: 100vh;
+}
+
+.progress-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    margin-top: 80px;
+}
+
+.progress-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 60px;
+    border-radius: var(--md-sys-shape-corner-medium);
+    text-align: center;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.progress-item .material-icons {
+    font-size: 6rem;
+    color: #FFD700;
+    margin-bottom: 30px;
+}
+
+.progress-item p {
+    color: white;
+    font-weight: 600;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.floating-image {
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    width: 200px;
+    height: 200px;
+}
+
+/* Mapping Grid */
+.image-grid-mapping {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.mapping-image.main {
+    grid-row: 1 / 3;
+}
+
+.mapping-image {
+    overflow: hidden;
+    position: relative;
+}
+
+.mapping-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Training Collage */
+.training-collage {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  /* 4 columns, adjust as needed */
+  grid-auto-rows: 250px;                  /* base height of rows */
+  gap: 10px;                            /* spacing between items */
+}
+
+.collage-item {
+    width: 100%;
+    height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.collage-item.large {
+  grid-column: span 2; /* large item takes 2 columns */
+  grid-row: span 2;    /* large item takes 2 rows */
+}
+
+.collage-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* fills the block like a collage */
+  object-position: center;
+  display: block;
+}
+
+
+/* Progress List */
+.progress-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.progress-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--md-sys-shape-corner-medium);
+    backdrop-filter: blur(5px);
+}
+
+.progress-item.completed .material-icons {
+    color: #4CAF50;
+    font-size: 3rem;
+}
+
+.progress-item.in-progress .material-icons {
+    color: #FF9800;
+    font-size: 3rem;
+}
+
+.progress-text h3 {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.progress-text p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.4;
+}
+
+/* RPTO Images */
+.rpto-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.rpto-image {
+    overflow: hidden;
+    position: relative;
+}
+
+.image-stack {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center;    /* center horizontally */
+  width: 100%;            /* full section width */
+  gap: 10px;              /* 10px gap between images */
+  box-sizing: border-box;
+}
+
+.image-stack img {
+  width: 100%;            /* stretch to full width */
+  height: auto;           /* keep aspect ratio */
+  object-fit: contain;    /* ensure no cropping */
+  display: block;
+}
+
+/* Exhibition Collage */
+.exhibition-collage {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    /* grid-template-rows: repeat(1fr, 1fr); */
+    gap: 8px;
+    width: 100%;
+    height: 100%;
+}
+
+.exhibition-item.large {
+    grid-row: 1 / 3;
+}
+
+.exhibition-item {
+    overflow: hidden;
+    position: relative;
+}
+
+.exhibition-item img {
+    width: 100%;
+  height: 100%;
+  object-fit: cover;  /* fills the block like a collage */
+  object-position: center;
+  display: block;
+}
+
+/* Publications Showcase */
+.publications-showcase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.book-image {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Research Showcase */
+.research-showcase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.research-image {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Photography Showcase */
+.photography-showcase {
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.photo-main {
+    overflow: hidden;
+}
+
+.photo-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.photo-item {
+    overflow: hidden;
+    position: relative;
+}
+
+/* Project Details */
+.project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.project-item h3 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.project-item h3 .material-icons {
+    color: #FFD700;
+    font-size: 2.5rem;
+}
+
+.project-item p {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+}
+
+/* Mentoring Details */
+.mentoring-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 60px;
+}
+
+.mentoring-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.mentoring-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.mentoring-item .material-icons {
+    color: #FFD700;
+    font-size: 4rem;
+    margin-top: 10px;
+}
+
+.mentoring-text h3 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.mentoring-text p {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+}
+
+/* Admin Details */
+.admin-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 60px;
+}
+
+.admin-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.admin-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.admin-item .material-icons {
+    color: #FFD700;
+    font-size: 4rem;
+    margin-top: 10px;
+}
+
+.admin-text h3 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.admin-text p {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+}
+
+/* Navigation */
+.carousel-nav {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0);
+    padding: 20px 40px;
+    border-radius: 50px;
+    box-shadow: var(--md-sys-elevation-2);
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.nav-btn .material-icons {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.slide-indicators {
+    display: flex;
+    gap: 15px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: white;
+    transform: scale(1.3);
+}
+
+.indicator:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .slide-content {
+        padding: 0;
+    }
+    
+    .split-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    
+    .content-section {
+        width: 100vw;
+        height: 50vh;
+        padding: 30px;
+    }
+    
+    .image-section {
+        width: 100vw;
+        height: 50vh;
+    }
+    
+    .title-content h1 {
+        font-size: 4rem;
+    }
+    
+    .title-content p {
+        font-size: 2rem;
+    }
+    
+    .period {
+        font-size: 1.5rem;
+    }
+    
+    .content-box h2 {
+        font-size: 2.5rem;
+    }
+    
+    .content-box li {
+        font-size: 1.5rem;
+    }
+    
+    .mentoring-details,
+    .admin-details {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .training-collage {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+    
+    .exhibition-collage {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(5, 1fr);
+    }
+}
